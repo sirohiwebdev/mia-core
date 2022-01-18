@@ -1,5 +1,5 @@
 {
-  "name": "mia-core",
+  "name": "@sirohiwebdev/mia-core",
   "version": "1.0.0",
   "description": "Mia app shared implementation",
   "main": "src/index.ts",
@@ -12,6 +12,7 @@
   ],
   "author": "sirohiwebdev@gmail.com",
   "license": "UNLICENSED",
+  "repository": "git://github.com/sirohiwebdev/mia-core",
   "devDependencies": {
     "@types/chai": "^4.3.0",
     "@types/mocha": "^9.0.0",
