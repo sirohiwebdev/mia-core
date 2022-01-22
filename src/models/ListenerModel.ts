@@ -1,5 +1,5 @@
 export class ListenerModal {
-  private listeners: (() => void)[];
+  private listeners: (() => void)[] = [];
 
   /**
    * Update listeners called on property update.
