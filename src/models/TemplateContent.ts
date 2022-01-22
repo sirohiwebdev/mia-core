@@ -30,9 +30,9 @@ export class TemplateContent {
     this.type = type;
     this.label = label;
     this.x = x || this.x;
-    this.x = y || this.y;
-    this.x = w || this.w;
-    this.x = h || this.h;
+    this.y = y || this.y;
+    this.w = w || this.w;
+    this.h = h || this.h;
     this.properties = properties || this.properties;
     this.source = source || this.source;
   }
