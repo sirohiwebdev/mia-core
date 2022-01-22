@@ -1,5 +1,6 @@
 import { InvitationTemplateContent } from "../types/template-content";
-export declare class TemplateContent {
+import { ListenerModal } from "./ListenerModel";
+export declare class TemplateContent extends ListenerModal {
     private id;
     private type;
     private x;
@@ -15,7 +16,7 @@ export declare class TemplateContent {
     });
     getId: () => string;
     getSource: () => string;
-    setSource: (s: string) => string;
+    setSource: (s: string) => void;
     updatePosition: (x: number, y: number) => void;
     updateDimensions: (w: number, h: number) => void;
     getPosition: () => [number, number];

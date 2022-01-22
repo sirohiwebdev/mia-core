@@ -6,6 +6,7 @@ import _ from "lodash";
 import { InvitationTemplateContent } from "../types/template-content";
 import { v4 } from "uuid";
 import { TemplateContent } from "./TemplateContent";
+import { ListenerModal } from "./ListenerModel";
 
 export type InvitationTemplateParams = Pick<
   IInvitationTemplateData,
@@ -18,7 +19,7 @@ export type InvitationTemplateParams = Pick<
   id?: string;
 };
 
-export class InvitationTemplate {
+export class InvitationTemplate extends ListenerModal {
   private id: string;
   private name: string;
   protected width: number;
@@ -34,6 +35,7 @@ export class InvitationTemplate {
     id,
     name,
   }: InvitationTemplateParams) {
+    super();
     this.height = height;
     this.name = name;
     this.id = id || v4();
@@ -55,23 +57,26 @@ export class InvitationTemplate {
     if (cId !== -1) {
       this.contents[cId] = content;
     }
+    this.triggerListeners();
   };
 
   getId = () => this.id;
 
   addContent = (content: TemplateContent) => {
     this.contents.push(content);
+    this.triggerListeners();
   };
 
   removeContent = (id: string) => {
     _.remove(this.contents, (f, i, a) => f.getId() === id);
+    this.triggerListeners();
   };
 
   getContentById = (id: string) => {
     return this.contents.find((f) => f.getId() === id);
   };
 
-  toJson(){
+  toJson() {
     return {
       id: this.id,
       name: this.name,
@@ -80,5 +85,5 @@ export class InvitationTemplate {
       width: this.width,
       contents: this.contents.map((c) => c.getData()),
     };
-  };
+  }
 }

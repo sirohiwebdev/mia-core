@@ -1,7 +1,8 @@
 import { v4 } from "uuid";
 import { InvitationTemplateContent } from "../types/template-content";
+import { ListenerModal } from "./ListenerModel";
 
-export class TemplateContent {
+export class TemplateContent extends ListenerModal {
   private id: string;
   private type: "image" | "icon" | "text";
   private x: number = 0;
@@ -26,6 +27,7 @@ export class TemplateContent {
     type: InvitationTemplateContent["type"];
     label: string;
   }) {
+    super();
     this.id = id || v4();
     this.type = type;
     this.label = label;
@@ -40,7 +42,10 @@ export class TemplateContent {
   getId = () => this.id;
 
   getSource = () => this.source;
-  setSource = (s: string) => (this.source = s);
+  setSource = (s: string) => {
+    this.source = s;
+    this.triggerListeners();
+  };
 
   /**
    * Update position of the content
@@ -50,6 +55,7 @@ export class TemplateContent {
   updatePosition = (x: number, y: number) => {
     this.x = x;
     this.y = y;
+    this.triggerListeners();
   };
 
   /**
@@ -60,6 +66,7 @@ export class TemplateContent {
   updateDimensions = (w: number, h: number) => {
     this.w = w;
     this.h = h;
+    this.triggerListeners();
   };
 
   /**
@@ -85,6 +92,8 @@ export class TemplateContent {
       ...this.properties,
       ...properties,
     };
+
+    this.triggerListeners();
   };
 
   getProperties = (): InvitationTemplateContent["properties"] => {

@@ -2,8 +2,10 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TemplateContent = void 0;
 const uuid_1 = require("uuid");
-class TemplateContent {
+const ListenerModel_1 = require("./ListenerModel");
+class TemplateContent extends ListenerModel_1.ListenerModal {
     constructor({ type, x, y, w, h, properties, source, label, id, }) {
+        super();
         this.x = 0;
         this.y = 0;
         this.w = 0;
@@ -12,14 +14,19 @@ class TemplateContent {
         this.properties = {};
         this.getId = () => this.id;
         this.getSource = () => this.source;
-        this.setSource = (s) => (this.source = s);
+        this.setSource = (s) => {
+            this.source = s;
+            this.triggerListeners();
+        };
         this.updatePosition = (x, y) => {
             this.x = x;
             this.y = y;
+            this.triggerListeners();
         };
         this.updateDimensions = (w, h) => {
             this.w = w;
             this.h = h;
+            this.triggerListeners();
         };
         this.getPosition = () => {
             return [this.x, this.y];
@@ -29,6 +36,7 @@ class TemplateContent {
         };
         this.updateProperties = (properties) => {
             this.properties = Object.assign(Object.assign({}, this.properties), properties);
+            this.triggerListeners();
         };
         this.getProperties = () => {
             return this.properties;
