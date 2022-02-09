@@ -15,6 +15,7 @@ export class InvitationImageTemplate extends InvitationTemplate {
   getImage = () => this.image;
   setImage = (image: string) => {
     this.image = image;
+    this.triggerListeners();
   };
   toJson() {
     const s = super.toJson();

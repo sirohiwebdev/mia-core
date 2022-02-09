@@ -15,6 +15,7 @@
   "repository": "git://github.com/sirohiwebdev/mia-core",
   "devDependencies": {
     "@types/chai": "^4.3.0",
+    "@types/lodash": "^4.14.178",
     "@types/mocha": "^9.0.0",
     "@types/sharp": "^0.29.5",
     "chai": "^4.3.4",

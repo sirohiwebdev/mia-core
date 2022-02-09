@@ -49,6 +49,7 @@ class InvitationTemplate extends ListenerModel_1.ListenerModal {
     }
     setLayout(layout) {
         this.layout = layout;
+        this.triggerListeners();
     }
     getDimensions() {
         return {
@@ -59,6 +60,7 @@ class InvitationTemplate extends ListenerModel_1.ListenerModal {
     updateDimensions(width, height) {
         this.width = width;
         this.height = height;
+        this.triggerListeners();
     }
     toJson() {
         return {

@@ -8,6 +8,7 @@ class InvitationImageTemplate extends Template_1.InvitationTemplate {
         this.getImage = () => this.image;
         this.setImage = (image) => {
             this.image = image;
+            this.triggerListeners();
         };
         this.image = props.image;
     }

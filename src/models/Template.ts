@@ -54,6 +54,7 @@ export class InvitationTemplate extends ListenerModal {
 
   setLayout(layout: TemplateLayout) {
     this.layout = layout;
+    this.triggerListeners();
   }
 
   getDimensions() {
@@ -65,6 +66,7 @@ export class InvitationTemplate extends ListenerModal {
   updateDimensions(width: number, height: number) {
     this.width = width;
     this.height = height;
+    this.triggerListeners();
   }
 
   getContents = () => {
