@@ -2,7 +2,7 @@
   "name": "@sirohiwebdev/mia-core",
   "version": "1.0.4",
   "description": "Mia app shared implementation",
-  "main": "src/index.ts",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "ts-mocha tests/**/*.spec.ts"
@@ -16,14 +16,20 @@
   "devDependencies": {
     "@types/chai": "^4.3.0",
     "@types/mocha": "^9.0.0",
+    "@types/sharp": "^0.29.5",
     "chai": "^4.3.4",
     "eslint": "^8.6.0",
     "mocha": "^9.1.4",
     "ts-mocha": "^9.0.2",
+    "ts-node": "^10.4.0",
     "typescript": "^4.5.4"
   },
   "dependencies": {
+    "axios": "^0.25.0",
+    "jimp": "^0.16.1",
     "lodash": "^4.17.21",
+    "sharp": "^0.29.3",
+    "svg2img": "^0.9.4",
     "uuid": "^8.3.2"
   }
 }

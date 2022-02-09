@@ -16,3 +16,7 @@ export interface IInvitationTemplateData {
   layout: TemplateLayout;
   contents: InvitationTemplateContent[];
 }
+
+export interface InvitationImageTemplateData extends IInvitationTemplateData {
+  image: string;
+}

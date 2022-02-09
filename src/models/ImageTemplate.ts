@@ -13,12 +13,14 @@ export class InvitationImageTemplate extends InvitationTemplate {
   }
 
   getImage = () => this.image;
-  toJson(){
+  setImage = (image: string) => {
+    this.image = image;
+  };
+  toJson() {
     const s = super.toJson();
-
     return {
       ...s,
       image: this.image,
     };
-  };
+  }
 }

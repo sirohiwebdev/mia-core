@@ -48,6 +48,25 @@ export class InvitationTemplate extends ListenerModal {
     });
   }
 
+  getLayout() {
+    return this.layout;
+  }
+
+  setLayout(layout: TemplateLayout) {
+    this.layout = layout;
+  }
+
+  getDimensions() {
+    return {
+      width: this.width,
+      height: this.height,
+    };
+  }
+  updateDimensions(width: number, height: number) {
+    this.width = width;
+    this.height = height;
+  }
+
   getContents = () => {
     return this.contents;
   };
