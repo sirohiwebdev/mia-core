@@ -1,6 +1,6 @@
 {
   "name": "@sirohiwebdev/mia-core",
-  "version": "1.0.6",
+  "version": "1.1.0",
   "description": "Mia app shared implementation",
   "main": "dist/index.js",
   "scripts": {
