@@ -4,7 +4,7 @@ export interface InvitationTemplateContent {
    * @private
    * Type of the content placed on the template
    */
-  type: "image" | "icon" | "text";
+  type: "image" | "icon" | "text" | "caricature";
   /**
    * X coordinate of the content respect to the template
    */
@@ -27,6 +27,8 @@ export interface InvitationTemplateContent {
   source?: string;
   label: string;
   properties: {
+    shadow?: number;
+
     fontSize?: number;
     /**
      * fontFamily of the content text
@@ -48,5 +50,7 @@ export interface InvitationTemplateContent {
      * Color or background for the content
      */
     backgroundColor?: string;
+
+    textAlign?: string;
   };
 }
