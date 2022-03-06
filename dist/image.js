@@ -19,10 +19,10 @@ const getImageDimensions = (width, height, baseWidth = base) => {
 };
 exports.getImageDimensions = getImageDimensions;
 const getContentDimensions = ({ template, content, baseWidth = base, }) => {
-    const tDimensions = (0, exports.getImageDimensions)(template.width, template.height);
+    const tDimensions = (0, exports.getImageDimensions)(template.width, template.height, baseWidth);
     const x1 = (content.x / template.width) * tDimensions.w;
     const y1 = (content.y / template.height) * tDimensions.h;
-    const x2 = ((content.x + content.w) / template.width) * tDimensions.h;
+    const x2 = ((content.x + content.w) / template.width) * tDimensions.w;
     const y2 = ((content.y + content.h) / template.height) * tDimensions.h;
     return {
         x: lodash_1.default.round(x1, 2),

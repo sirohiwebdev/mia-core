@@ -27,11 +27,15 @@ export const getContentDimensions = ({
   template: { width: number; height: number };
   content: { x: number; y: number; w: number; h: number };
 }) => {
-  const tDimensions = getImageDimensions(template.width, template.height);
+  const tDimensions = getImageDimensions(
+    template.width,
+    template.height,
+    baseWidth
+  );
 
   const x1 = (content.x / template.width) * tDimensions.w;
   const y1 = (content.y / template.height) * tDimensions.h;
-  const x2 = ((content.x + content.w) / template.width) * tDimensions.h;
+  const x2 = ((content.x + content.w) / template.width) * tDimensions.w;
   const y2 = ((content.y + content.h) / template.height) * tDimensions.h;
 
   return {
