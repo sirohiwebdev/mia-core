@@ -1,4 +1,4 @@
-import { InvitationTemplateContent } from "types/template-content";
+import { InvitationTemplateContent } from "../types/template-content";
 import { InvitationTemplate, InvitationTemplateParams } from "./Template";
 
 export interface VideoTemplateContent extends InvitationTemplateContent {
