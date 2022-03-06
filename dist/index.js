@@ -15,5 +15,6 @@ __exportStar(require("./types/template-data"), exports);
 __exportStar(require("./models/Template"), exports);
 __exportStar(require("./models/ImageTemplate"), exports);
 __exportStar(require("./models/TemplateContent"), exports);
+__exportStar(require("./models/VideoTemplate"), exports);
 __exportStar(require("./image"), exports);
 //# sourceMappingURL=index.js.map

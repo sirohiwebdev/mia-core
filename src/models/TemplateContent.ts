@@ -4,7 +4,7 @@ import { ListenerModal } from "./ListenerModel";
 
 export class TemplateContent extends ListenerModal {
   private id: string;
-  private type: "image" | "icon" | "text";
+  private type: InvitationTemplateContent["type"];
   private x: number = 0;
   private y: number = 0;
   private w: number = 0;
